@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DocVault — Add Document</title>
+<link rel="stylesheet" href="/css/slidbar.css">
+<link rel="stylesheet" href="/css/add-document.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="app-shell">
+<aside class="sidebar">
+<a class="brand" href="index.html"><span class="brand-mark">▱</span><span class="brand-copy"><strong>DocVault</strong><small>Your Documents, Organized</small></span></a>
+<nav class="main-nav">
+<a class="nav-link" href="../index.html"><span class="nav-icon">⌂</span>Home</a>
+<a class="nav-link active" href="add-document.html"><span class="nav-icon">＋</span>Add Document</a>
+<a class="nav-link" href="all-documents.html"><span class="nav-icon">▤</span>All Documents</a>
+<a class="nav-link" href="favorites.html"><span class="nav-icon">☆</span>Favorites</a>
+<a class="nav-link" href="recent.html"><span class="nav-icon">◷</span>Recent</a>
+<a class="nav-link" href="shared.html"><span class="nav-icon">♧</span>Shared</a>
+<a class="nav-link" href="recycle-bin.html"><span class="nav-icon">♜</span>Recycle Bin</a>
+</nav>
+<div class="nav-divider"></div>
+<div class="section-heading">
+    SECTIONS <button id="addSectionBtn" class="icon-button" type="button">＋</button>
+</div>
+<nav class="section-nav">
+<a class="nav-link" href="#"><span class="section-icon education">◆</span>Education</a><a class="nav-link" href="#">
+    <span class="section-icon government">▦</span>Government</a><a class="nav-link" href="#">
+    <span class="section-icon banking">▤</span>Banking</a><a class="nav-link" href="#">
+    <span class="section-icon office">▣</span>Office</a><a class="nav-link" href="#">
+    <span class="section-icon medical">♥</span>Medical</a><a class="nav-link" href="#">
+    <span class="section-icon vehicle">▰</span>Vehicle</a><a class="nav-link" href="#">
+    <span class="section-icon property">⌂</span>Property</a><a class="nav-link" href="#">
+    <span class="section-icon insurance">⬟</span>Insurance</a><a class="nav-link" href="#">
+    <span class="section-icon travel">✈</span>Travel</a><a class="nav-link" href="#">
+    <span class="section-icon personal">●</span>Personal</a><a class="nav-link" href="#">
+    <span class="section-icon other">■</span>Other</a>
+</nav>
+<div class="sidebar-footer">
+    <a class="nav-link" href="settings.html"><span class="nav-icon">⚙</span>Settings</a>
+    <a class="nav-link" href="help.html"><span class="nav-icon">?</span>Help &amp; Support</a>
+</div>
+</aside>
+<main class="main-area">
+<header class="topbar"><button id="sidebarToggle" class="icon-button sidebar-toggle" type="button" aria-label="Toggle sidebar">▥</button>
+<label class="search-box"><span>⌕</span><input type="search" placeholder="Search documents, sections, tags..." aria-label="Search documents"><kbd>Ctrl + K</kbd></label>
+<button class="icon-button notification-button" type="button" aria-label="Notifications">♧<i></i></button>
+<div class="profile-menu"><button class="profile-trigger" id="profileTrigger" type="button"><span class="avatar">B</span><span class="profile-name">Hello,<strong>Bishwajit</strong></span><span>⌄</span></button><div class="profile-dropdown" id="profileDropdown"><a href="profile.html">My Profile</a><a href="settings.html">Settings</a></div></div>
+</header>
+<section class="page-content">
+<a class="back-link" href="index.html">← <span>Back</span></a>
+<div class="page-heading"><h1>Add Document</h1><p>Upload a file and add details to keep it organized.</p></div>
+<form id="documentForm" class="document-layout">
+<section class="form-panel">
+<div class="upload-zone" id="uploadZone" tabindex="0" role="button" aria-label="Choose or drop a document">
+<input id="fileInput" type="file" hidden accept=".pdf,.png,.jpg,.jpeg,.webp,.txt,.doc,.docx,.xls,.xlsx,.ppt,.pptx,.csv">
+<div class="upload-cloud">☁<span>↑</span></div><h2>Drag &amp; drop your file here</h2><p>or click to browse from your device</p>
+<button class="primary-button" type="button" id="chooseFileBtn">▤ &nbsp; Choose File</button>
+<small>Supports PDF, PNG, JPG, JPEG, WEBP, TXT, DOC, DOCX, XLS, XLSX, PPT, PPTX, CSV and more<br>(Videos are not supported)</small>
+</div>
+<div class="details-heading"><h2>Document Details</h2><span id="formMessage" role="status"></span></div>
+<div class="form-grid">
+<label class="field"><span>File Name</span><input id="fileName" type="text" placeholder="e.g. BTech Degree.pdf" required></label>
+<label class="field"><span>Document Type</span><select id="documentType" required><option value="">Select document type</option><option>Certificate</option><option>Identity Proof</option><option>Financial Document</option><option>Agreement</option><option>Education Record</option><option>Medical Record</option><option>Other</option></select></label>
+<label class="field"><span>Section <b>*</b></span><select id="section" required><option value="">Select section</option><option>Education</option><option>Government</option><option>Banking</option><option>Office</option><option>Medical</option><option>Vehicle</option><option>Property</option><option>Insurance</option><option>Travel</option><option>Personal</option><option>Other</option></select></label>
+<label class="field"><span>Issue Date <em>(Optional)</em></span><input id="issueDate" type="date"></label>
+<label class="field"><span>Tags</span><div class="tag-input-wrap"><div id="tagList"></div><input id="tagInput" type="text" placeholder="Add a tag and press Enter" aria-label="Add tag"></div></label>
+<label class="field"><span>Expiry Date <em>(Optional)</em></span><input id="expiryDate" type="date"></label>
+<label class="field"><span>Description <em>(Optional)</em></span><textarea id="description" maxlength="500" placeholder="Add a short description..." rows="3"></textarea><small class="character-count"><span id="descriptionCount">0</span>/500</small></label>
+<label class="field"><span>Document Number <em>(Optional)</em></span><input id="documentNumber" type="text" placeholder="Enter document number"></label>
+<label class="field"><span>Issuer <em>(Optional)</em></span><input id="issuer" type="text" placeholder="Enter issuing authority"></label>
+</div>
+<div class="form-actions mobile-actions"><button type="button" class="secondary-button" id="cancelBtn">Cancel</button><button type="submit" class="primary-button">✓ &nbsp; Add Document</button></div>
+</section>
+<aside class="preview-column"><section class="preview-panel"><h2>Preview</h2>
+<div class="file-preview"><div class="pdf-icon" id="previewIcon"><span>PDF</span></div><strong id="previewName">No file selected</strong><p id="previewMeta">Choose a file to see its details</p><button type="button" class="secondary-button" id="changeFileBtn">⟳ &nbsp; Change File</button></div>
+<div class="file-information"><h3>File Information</h3><dl><div><dt>File Name</dt><dd id="infoName">—</dd></div><div><dt>File Type</dt><dd id="infoType">—</dd></div><div><dt>File Size</dt><dd id="infoSize">—</dd></div><div><dt>Date Modified</dt><dd id="infoDate">—</dd></div><div><dt>Path</dt><dd id="infoPath">Local file selection</dd></div></dl></div>
+<div class="security-note"><span class="security-icon">✓</span><div><strong>Your document is safe</strong><p>This frontend demo does not upload files. Connect secure storage and encryption before storing sensitive documents.</p></div></div>
+</section><div class="form-actions desktop-actions"><button type="button" class="secondary-button" id="cancelBtnDesktop">Cancel</button><button type="submit" class="primary-button">✓ &nbsp; Add Document</button></div></aside>
+</form></section></main></div><div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="script.js"></script><script src="add-document.js"></script>
+</body></html>

@@ -1,0 +1,8 @@
+document.addEventListener("DOMContentLoaded",()=>{
+ const toggle=document.getElementById("sidebarToggle"),trigger=document.getElementById("profileTrigger"),dropdown=document.getElementById("profileDropdown");
+ toggle?.addEventListener("click",()=>{if(matchMedia("(max-width:760px)").matches)document.body.classList.toggle("mobile-sidebar-open");else document.body.classList.toggle("sidebar-collapsed")});
+ trigger?.addEventListener("click",()=>dropdown?.classList.toggle("open"));
+ document.addEventListener("click",e=>{if(dropdown&&!e.target.closest(".profile-menu"))dropdown.classList.remove("open");if(matchMedia("(max-width:760px)").matches&&document.body.classList.contains("mobile-sidebar-open")&&!e.target.closest(".sidebar")&&!e.target.closest("#sidebarToggle"))document.body.classList.remove("mobile-sidebar-open")});
+ document.getElementById("addSectionBtn")?.addEventListener("click",()=>{const name=prompt("Enter a new section name:");if(!name?.trim())return;const a=document.createElement("a");a.className="nav-link";a.href="#";const i=document.createElement("span");i.className="section-icon other";i.textContent="■";const s=document.createElement("span");s.textContent=name.trim();a.append(i,s);document.querySelector(".section-nav")?.append(a)});
+ document.addEventListener("keydown",e=>{if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==="k"){e.preventDefault();document.querySelector(".search-box input")?.focus()}if(e.key==="Escape"){dropdown?.classList.remove("open");document.body.classList.remove("mobile-sidebar-open")}});
+});

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DocVault — Home</title>
+  <link rel="stylesheet" href="/css/home.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="index.html" aria-label="DocVault home">
+        <span class="brand-mark"><i data-lucide="folder"></i></span>
+        <span class="brand-copy"><strong>DocVault</strong><small>Your Documents, Organized</small></span>
+      </a>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <a class="nav-item active" href="index.html"><i data-lucide="house"></i><span>Home</span></a>
+        <a class="nav-item" href="all-documents.html"><i data-lucide="file-text"></i><span>All Documents</span></a>
+        <a class="nav-item" href="favorites.html"><i data-lucide="star"></i><span>Favorites</span></a>
+        <a class="nav-item" href="recent.html"><i data-lucide="clock-3"></i><span>Recent</span></a>
+        <a class="nav-item" href="shared.html"><i data-lucide="users"></i><span>Shared</span></a>
+        <a class="nav-item" href="recycle-bin.html"><i data-lucide="trash-2"></i><span>Recycle Bin</span></a>
+      </nav>
+
+      <div class="side-section-title"><span>SECTIONS</span><button id="addSectionBtn" class="icon-button" aria-label="Add section"><i data-lucide="plus"></i></button></div>
+      <nav class="section-nav" aria-label="Document sections">
+        <a class="nav-item" href="all-documents.html?section=Education"><i class="section-icon blue"><i data-lucide="graduation-cap"></i></i><span>Education</span></a>
+        <a class="nav-item" href="all-documents.html?section=Government"><i class="section-icon cyan"><i data-lucide="contact-round"></i></i><span>Government</span></a>
+        <a class="nav-item" href="all-documents.html?section=Banking"><i class="section-icon green"><i data-lucide="landmark"></i></i><span>Banking</span></a>
+        <a class="nav-item" href="all-documents.html?section=Office"><i class="section-icon orange"><i data-lucide="briefcase-business"></i></i><span>Office</span></a>
+        <a class="nav-item" href="all-documents.html?section=Medical"><i class="section-icon red"><i data-lucide="heart-pulse"></i></i><span>Medical</span></a>
+        <a class="nav-item" href="all-documents.html?section=Vehicle"><i class="section-icon purple"><i data-lucide="car-front"></i></i><span>Vehicle</span></a>
+        <a class="nav-item" href="all-documents.html?section=Property"><i class="section-icon amber"><i data-lucide="house"></i></i><span>Property</span></a>
+        <a class="nav-item" href="all-documents.html?section=Insurance"><i class="section-icon teal"><i data-lucide="shield-check"></i></i><span>Insurance</span></a>
+        <a class="nav-item" href="all-documents.html?section=Travel"><i class="section-icon sky"><i data-lucide="plane"></i></i><span>Travel</span></a>
+        <a class="nav-item" href="all-documents.html?section=Personal"><i class="section-icon violet"><i data-lucide="user-round"></i></i><span>Personal</span></a>
+        <a class="nav-item" href="all-documents.html?section=Other"><i class="section-icon gold"><i data-lucide="folder"></i></i><span>Other</span></a>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <a class="nav-item" href="settings.html"><i data-lucide="settings"></i><span>Settings</span></a>
+        <a class="nav-item" href="help.html"><i data-lucide="circle-help"></i><span>Help &amp; Support</span></a>
+      </div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <button class="icon-button sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar"><i data-lucide="panel-left"></i></button>
+        <div class="global-search"><i data-lucide="search"></i><input id="globalSearch" type="search" placeholder="Search documents, sections, tags..."><kbd>Ctrl + K</kbd></div>
+        <button class="icon-button notification-btn" aria-label="Notifications"><i data-lucide="bell"></i><span class="notification-dot"></span></button>
+        <div class="top-divider"></div>
+        <button class="profile-button" id="profileButton">
+          <span class="avatar">B</span><span class="profile-text"><small>Hello,</small><strong>Bishwajit</strong></span><i data-lucide="chevron-down"></i>
+        </button>
+      </header>
+
+      <div class="page-content">
+        <section class="welcome-row">
+          <div><h1>Good evening, Bishwajit <span class="wave">👋</span></h1><p>Your documents are safe and organized.</p></div>
+          <a class="primary-button" href="add-document.html"><i data-lucide="plus"></i><span>Add Document</span><i data-lucide="chevron-down" class="button-chevron"></i></a>
+        </section>
+
+        <div class="dashboard-layout">
+          <div class="dashboard-main">
+            <section class="panel sections-panel">
+              <div class="panel-heading"><h2>Document Sections</h2><a href="all-documents.html" class="text-link">View All <i data-lucide="chevron-right"></i></a></div>
+              <div class="section-grid">
+                <a class="section-card education" href="all-documents.html?section=Education"><span class="section-art"><i data-lucide="graduation-cap"></i></span><strong>Education</strong><i class="card-arrow" data-lucide="chevron-right"></i><small>24 documents</small></a>
+                <a class="section-card government" href="all-documents.html?section=Government"><span class="section-art"><i data-lucide="contact-round"></i></span><strong>Government</strong><i class="card-arrow" data-lucide="chevron-right"></i><small>18 documents</small></a>
+                <a class="section-card banking" href="all-documents.html?section=Banking"><span class="section-art"><i data-lucide="landmark"></i></span><strong>Banking</strong><i class="card-arrow" data-lucide="chevron-right"></i><small>15 documents</small></a>
+                <a class="section-card office" href="all-documents.html?section=Office"><span class="section-art"><i data-lucide="briefcase-business"></i></span><strong>Office</strong><i class="card-arrow" data-lucide="chevron-right"></i><small>12 documents</small></a>
+                <a class="section-card medical" href="all-documents.html?section=Medical"><span class="section-art"><i data-lucide="heart-pulse"></i></span><strong>Medical</strong><i class="card-arrow" data-lucide="chevron-right"></i><small>8 documents</small></a>
+                <a class="section-card vehicle" href="all-documents.html?section=Vehicle"><span class="section-art"><i data-lucide="car-front"></i></span><strong>Vehicle</strong><i class="card-arrow" data-lucide="chevron-right"></i><small>6 documents</small></a>
+                <a class="section-card property" href="all-documents.html?section=Property"><span class="section-art"><i data-lucide="house"></i></span><strong>Property</strong><i class="card-arrow" data-lucide="chevron-right"></i><small>5 documents</small></a>
+                <a class="section-card insurance" href="all-documents.html?section=Insurance"><span class="section-art"><i data-lucide="shield-check"></i></span><strong>Insurance</strong><i class="card-arrow" data-lucide="chevron-right"></i><small>7 documents</small></a>
+                <a class="section-card travel" href="all-documents.html?section=Travel"><span class="section-art"><i data-lucide="plane"></i></span><strong>Travel</strong><i class="card-arrow" data-lucide="chevron-right"></i><small>4 documents</small></a>
+                <a class="section-card personal" href="all-documents.html?section=Personal"><span class="section-art"><i data-lucide="user-round"></i></span><strong>Personal</strong><i class="card-arrow" data-lucide="chevron-right"></i><small>9 documents</small></a>
+                <a class="section-card other" href="all-documents.html?section=Other"><span class="section-art"><i data-lucide="folder"></i></span><strong>Other</strong><i class="card-arrow" data-lucide="chevron-right"></i><small>3 documents</small></a>
+                <button class="section-card add-section-card" id="addSectionCard"><span class="add-section-circle"><i data-lucide="plus"></i></span><strong>Add New Section</strong></button>
+              </div>
+            </section>
+
+            <div class="lower-grid">
+              <section class="panel recent-panel">
+                <div class="panel-heading"><h2>Recent Documents</h2><a href="all-documents.html" class="text-link">View All <i data-lucide="chevron-right"></i></a></div>
+                <div class="recent-list">
+                  <div class="recent-item"><span class="file-icon pdf"><i data-lucide="file-text"></i></span><span class="recent-details"><strong>Aadhaar Card.pdf</strong><small>Government <b>•</b> 12 Aug 2025, 10:24 AM</small></span><button class="more-button" aria-label="More options">•••</button></div>
+                  <div class="recent-item"><span class="file-icon image"><i data-lucide="image"></i></span><span class="recent-details"><strong>BTech Degree.jpg</strong><small>Education <b>•</b> 10 Aug 2025, 06:12 PM</small></span><button class="more-button" aria-label="More options">•••</button></div>
+                  <div class="recent-item"><span class="file-icon pdf"><i data-lucide="file-text"></i></span><span class="recent-details"><strong>Salary Slip - July 2025.pdf</strong><small>Office <b>•</b> 08 Aug 2025, 11:45 AM</small></span><button class="more-button" aria-label="More options">•••</button></div>
+                  <div class="recent-item"><span class="file-icon image-purple"><i data-lucide="image"></i></span><span class="recent-details"><strong>Health Checkup Report.png</strong><small>Medical <b>•</b> 05 Aug 2025, 09:30 AM</small></span><button class="more-button" aria-label="More options">•••</button></div>
+                </div>
+              </section>
+
+              <section class="panel storage-panel">
+                <div class="panel-heading"><h2>Storage &amp; Sync</h2></div>
+                <div class="storage-row"><span class="storage-icon local"><i data-lucide="laptop"></i></span><div class="storage-info"><strong>Local Storage</strong><small>248 documents <b>•</b> 4.2 GB used</small><div class="progress"><span style="width:68%"></span></div></div><span class="storage-percent">68%</span></div>
+                <div class="storage-row"><span class="storage-icon drive"><span class="drive-triangle">▲</span></span><div class="storage-info"><strong>Google Drive</strong><small>96 documents <b>•</b> 2.1 GB used</small><div class="progress green-progress"><span style="width:42%"></span></div></div><span class="storage-percent">42%</span></div>
+                <div class="sync-bar"><span class="sync-check"><i data-lucide="check"></i></span><span>Last synced: Today, 08:45 PM</span><button id="syncButton"><i data-lucide="refresh-cw"></i> Sync Now</button></div>
+              </section>
+            </div>
+          </div>
+
+          <aside class="right-column">
+            <section class="panel promo-panel">
+              <div class="folder-illustration"><span class="folder-back"></span><span class="folder-front"><i data-lucide="folder"></i></span><span class="success-bubble"><i data-lucide="check"></i></span><span class="illustration-shadow"></span></div>
+              <h2>Keep Your Important<br>Documents Organized</h2>
+              <p>Add, manage and access your<br>documents anytime, anywhere.</p>
+            </section>
+            <section class="panel quick-panel">
+              <h2>Quick Actions</h2>
+              <a href="add-document.html" class="quick-action"><span class="quick-icon add"><i data-lucide="plus"></i></span>Add Document</a>
+              <button class="quick-action" id="importFolderBtn"><span class="quick-icon import"><i data-lucide="folder-closed"></i></span>Import from Folder</button>
+              <button class="quick-action" id="driveBtn"><span class="drive-logo">▲</span>Sync with Google Drive</button>
+              <button class="quick-action" id="scanBtn"><span class="quick-icon scan"><i data-lucide="scan-line"></i></span>Scan for New Documents</button>
+              <input id="folderInput" type="file" webkitdirectory multiple hidden>
+            </section>
+          </aside>
+        </div>
+      </div>
+    </main>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="/javascript/home.js"></script>
+</body>
+</html>

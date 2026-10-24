@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DocVault — Secure Document Manager</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand-row">
+        <div class="brand-icon"><i data-lucide="folder"></i></div>
+        <div class="brand-copy"><h1>DocVault</h1><p>Your Documents, Organized</p></div>
+      </div>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="/pages/home.html"><button class="nav-item" data-page="Home"><i data-lucide="house"></i><span>Home</span></button></a>
+        <a href="/pages/add-document.html"><button class="nav-item" data-page="Add Document"><i data-lucide="circle-plus"></i><span>Add Document</span></button></a>
+        <a href="/pages/all-documents.html"><button class="nav-item" data-page="All Documents"><i data-lucide="file-text"></i><span>All Documents</span></button></a>
+        <button class="nav-item" data-page="Favorites"><i data-lucide="star"></i><span>Favorites</span></button>
+        <button class="nav-item" data-page="Recent"><i data-lucide="history"></i><span>Recent</span></button>
+        <button class="nav-item" data-page="Shared"><i data-lucide="share-2"></i><span>Shared</span></button>
+        <button class="nav-item" data-page="Recycle Bin"><i data-lucide="trash-2"></i><span>Recycle Bin</span></button>
+      </nav>
+
+      <div class="section-heading"><span>SECTIONS</span><button class="icon-button small" id="addSectionBtn" title="Add section"><i data-lucide="plus"></i></button></div>
+      <nav class="section-nav" aria-label="Document sections">
+        <button class="nav-item"><i class="section-color blue" data-lucide="graduation-cap"></i><span>Education</span></button>
+        <button class="nav-item"><i class="section-color cyan" data-lucide="landmark"></i><span>Government</span></button>
+        <button class="nav-item"><i class="section-color green" data-lucide="building-2"></i><span>Banking</span></button>
+        <button class="nav-item"><i class="section-color orange" data-lucide="briefcase-business"></i><span>Office</span></button>
+        <button class="nav-item"><i class="section-color red" data-lucide="heart-pulse"></i><span>Medical</span></button>
+        <button class="nav-item"><i class="section-color purple" data-lucide="car-front"></i><span>Vehicle</span></button>
+        <button class="nav-item"><i class="section-color yellow" data-lucide="house"></i><span>Property</span></button>
+        <button class="nav-item"><i class="section-color green" data-lucide="shield-check"></i><span>Insurance</span></button>
+        <button class="nav-item"><i class="section-color blue" data-lucide="plane"></i><span>Travel</span></button>
+        <button class="nav-item"><i class="section-color purple" data-lucide="user-round"></i><span>Personal</span></button>
+        <button class="nav-item"><i class="section-color orange" data-lucide="lock-keyhole"></i><span>Other</span></button>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <button class="nav-item" data-page="Settings"><i data-lucide="settings"></i><span>Settings</span></button>
+        <button class="nav-item" data-page="Help & Support"><i data-lucide="circle-help"></i><span>Help &amp; Support</span></button>
+      </div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <button class="icon-button sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar" title="Toggle sidebar"><i data-lucide="panel-left"></i></button>
+        <label class="search-box">
+          <i data-lucide="search"></i>
+          <input id="globalSearch" type="search" placeholder="Search documents, sections, tags..." />
+          <kbd>Ctrl + K</kbd>
+        </label>
+        <div class="topbar-spacer"></div>
+        <button class="icon-button notification-button" id="notificationBtn" aria-label="Notifications"><i data-lucide="bell"></i><span class="notification-dot"></span></button>
+        <div class="top-divider"></div>
+        <button class="profile-menu" id="profileBtn">
+          <span class="avatar" id="avatarInitial">B</span>
+          <span class="profile-text"><span>Hello,</span><strong id="profileName">Bishwajit</strong></span>
+          <i data-lucide="chevron-down"></i>
+        </button>
+        <div class="profile-popover hidden" id="profilePopover">
+          <strong>Bishwajit</strong><span>Personal workspace</span>
+          <button id="editProfileBtn"><i data-lucide="user-round"></i> Edit profile</button>
+          <button id="signOutBtn"><i data-lucide="log-out"></i> Sign out</button>
+        </div>
+      </header>
+
+      <div class="dashboard-content">
+        <section class="welcome-row">
+          <div><h2 id="pageTitle">Good evening, Bishwajit <span class="wave">👋</span></h2><p id="pageSubtitle">Your documents are safe, organized and encrypted.</p></div>
+          <div class="add-wrap">
+            <button class="primary-button" id="addDocumentBtn"><i data-lucide="plus"></i><span>Add Document</span></button>
+            <button class="primary-button dropdown-trigger" id="addDropdownBtn" aria-label="More add options"><i data-lucide="chevron-down"></i></button>
+            <div class="add-popover hidden" id="addPopover"><button id="uploadFromMenu"><i data-lucide="upload"></i> Upload a file</button><button id="createNoteBtn"><i data-lucide="file-plus-2"></i> Create a note</button></div>
+          </div>
+          <input type="file" id="fileInput" hidden multiple />
+        </section>
+
+        <section class="stats-grid">
+          <article class="stat-card"><div class="stat-icon blue-bg"><i data-lucide="file-text"></i></div><div class="stat-body"><p>Total Documents</p><strong id="totalDocs">128</strong><span class="trend"><i data-lucide="arrow-up-right"></i> +12% from last month</span></div></article>
+          <article class="stat-card"><div class="stat-icon green-bg"><i data-lucide="lock-keyhole"></i></div><div class="stat-body"><p>Encrypted Documents</p><strong id="encryptedDocs">124</strong><span class="sub-note">Secured with AES-256-GCM</span></div><div class="progress-ring"><span>97%</span></div></article>
+          <article class="stat-card"><div class="stat-icon purple-bg"><i data-lucide="users-round"></i></div><div class="stat-body"><p>Shared with Others</p><strong>8</strong><span class="sub-note">Across 3 sections</span></div></article>
+          <article class="stat-card"><div class="stat-icon blue-bg"><i data-lucide="database"></i></div><div class="stat-body"><p>Storage Used</p><strong>4.8 GB</strong><div class="storage-line"><span style="width:68%"></span></div></div><span class="storage-percent">68% of 10 GB</span></article>
+        </section>
+
+        <section class="middle-grid">
+          <article class="panel chart-panel">
+            <div class="panel-heading"><div><h3>Document Activity</h3><p>Documents added, viewed or modified in the last 30 days.</p></div><select id="activityRange" aria-label="Activity range"><option>Last 30 days</option><option>Last 7 days</option><option>Last 12 months</option></select></div>
+            <div class="chart-wrap"><div class="y-labels"><span>50</span><span>40</span><span>30</span><span>20</span><span>10</span><span>0</span></div><svg id="activityChart" viewBox="0 0 720 210" preserveAspectRatio="none" role="img" aria-label="Document activity chart"></svg><div class="x-labels"><span>1</span><span>3</span><span>5</span><span>7</span><span>9</span><span>11</span><span>13</span><span>15</span><span>17</span><span>19</span><span>21</span><span>23</span><span>25</span><span>27</span><span>29</span><span>30</span></div></div>
+          </article>
+          <article class="panel activity-panel"><div class="panel-heading"><div><h3>Recent Activity</h3></div><button class="text-button" id="viewActivityBtn">View All</button></div><div class="activity-list" id="activityList">
+            <div class="activity-row"><div class="activity-icon blue-bg"><i data-lucide="file-text"></i></div><div><strong>You added BTech Degree.pdf</strong><span>2 minutes ago</span></div><button class="more-button" aria-label="More options">⋮</button></div>
+            <div class="activity-row"><div class="activity-icon green-bg"><i data-lucide="share-2"></i></div><div><strong>Sarah J. viewed Bank Statement - July.pdf</strong><span>12 minutes ago</span></div><button class="more-button" aria-label="More options">⋮</button></div>
+            <div class="activity-row"><div class="activity-icon purple-bg"><i data-lucide="pencil"></i></div><div><strong>You updated Rent Agreement.pdf</strong><span>1 hour ago</span></div><button class="more-button" aria-label="More options">⋮</button></div>
+            <div class="activity-row"><div class="activity-icon yellow-bg"><i data-lucide="download"></i></div><div><strong>Mark R. downloaded Offer Letter.pdf</strong><span>3 hours ago</span></div><button class="more-button" aria-label="More options">⋮</button></div>
+            <div class="activity-row"><div class="activity-icon red-bg"><i data-lucide="shield-alert"></i></div><div><strong>Unusual login attempt blocked</strong><span>5 hours ago</span></div><button class="more-button" aria-label="More options">⋮</button></div>
+          </div></article>
+        </section>
+
+        <section class="bottom-grid">
+          <article class="panel sections-panel"><div class="panel-heading"><h3>Documents by Section</h3><button class="text-button" data-page="All Documents">View All</button></div><div class="donut-layout"><div class="donut"><div class="donut-center"><strong>128</strong><span>Documents</span></div></div><div class="legend">
+            <div><i class="dot dot-blue"></i><span>Education</span><b>32</b></div><div><i class="dot dot-cyan"></i><span>Government</span><b>18</b></div><div><i class="dot dot-teal"></i><span>Banking</span><b>15</b></div><div><i class="dot dot-yellow"></i><span>Office</span><b>12</b></div><div><i class="dot dot-red"></i><span>Medical</span><b>8</b></div><div><i class="dot dot-purple"></i><span>Vehicle</span><b>6</b></div><div><i class="dot dot-grey"></i><span>Others</span><b>37</b></div>
+          </div></div></article>
+          <article class="panel filetypes-panel"><div class="panel-heading"><h3>File Type Distribution</h3><button class="text-button" data-page="All Documents">View All</button></div><div class="bar-chart"><div class="bar-item"><b>72</b><span class="bar pdf" style="height:72%"></span><small>PDF</small></div><div class="bar-item"><b>18</b><span class="bar jpg" style="height:38%"></span><small>JPG</small></div><div class="bar-item"><b>8</b><span class="bar docx" style="height:23%"></span><small>DOCX</small></div><div class="bar-item"><b>6</b><span class="bar png" style="height:17%"></span><small>PNG</small></div><div class="bar-item"><b>6</b><span class="bar webp" style="height:17%"></span><small>WEBP</small></div><div class="bar-item"><b>18</b><span class="bar other" style="height:38%"></span><small>Other</small></div></div></article>
+          <article class="panel locations-panel"><div class="panel-heading"><h3>Storage Locations</h3><button class="text-button" id="manageStorageBtn">Manage</button></div><div class="location-row"><div class="location-icon"><i data-lucide="laptop"></i></div><div class="location-info"><strong>Local Storage</strong><span>96 documents · 3.4 GB used</span><div class="storage-line"><span style="width:68%"></span></div></div><small>68%</small></div><div class="location-row"><div class="drive-icon">▲</div><div class="location-info"><strong>Google Drive</strong><span>32 documents · 1.4 GB used</span><div class="storage-line green-line"><span style="width:42%"></span></div></div><small>42%</small></div><div class="secure-note"><div class="secure-shield"><i data-lucide="shield-check"></i></div><div><strong>All files are securely encrypted</strong><span>Your documents are protected with AES-256-GCM encryption.</span></div><i data-lucide="chevron-right"></i></div></article>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <div class="toast" id="toast" role="status"></div>
+  <div class="modal-backdrop hidden" id="modalBackdrop"><div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="modal-head"><h3 id="modalTitle">Add Document</h3><button class="icon-button" id="closeModal" aria-label="Close"><i data-lucide="x"></i></button></div><p id="modalText">Choose documents to add to your workspace.</p><div class="drop-zone" id="dropZone"><i data-lucide="cloud-upload"></i><strong>Drop files here or browse</strong><span>Choose one or more files from your device</span><button class="primary-button" id="browseFilesBtn">Browse Files</button></div><div id="selectedFiles" class="selected-files"></div><div class="modal-actions"><button class="secondary-button" id="cancelUpload">Cancel</button><button class="primary-button" id="confirmUpload">Add to Dashboard</button></div></div></div>
+  <script src="script.js"></script>
+</body>
+</html>
